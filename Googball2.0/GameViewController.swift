@@ -11,12 +11,29 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var play : GameScene!
+    
+    @IBOutlet weak var leftButton: UIButton!
+    
+    @IBOutlet weak var rightButton: UIButton!
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var settingsButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "galaxy")!)
+        leftButton.isHidden = true
+        rightButton.isHidden = true
+        
+        
+       
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
+                play = scene as? GameScene
+                //play.startFunc()
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -29,6 +46,7 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -44,5 +62,23 @@ class GameViewController: UIViewController {
     }
     
     
+    @IBAction func left(_ sender: Any) {
+        play.leftFunc()
+    }
+    
+    
+    @IBAction func right(_ sender: Any) {
+        play.rightFunc()
+    }
+    
+    @IBAction func playButton(_ sender: Any) {
+        
+        playButton.isHidden = true
+        settingsButton.isHidden = true
+        leftButton.isHidden = false
+        rightButton.isHidden = false
+        play.startFunc()
+        
+    }
     
 }
