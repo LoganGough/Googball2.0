@@ -12,10 +12,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var ball: SKSpriteNode!
     let cam = SKCameraNode()
-    var level1Complete = true
-    var level2Complete = false
-    var level3Complete = false
-    var level = 1
+    var level = 0
+    var levelArray = [Levels]()
+    var makeLevels = true
+    var level1 = Levels(level: 1, levelComplete: false, ballPositionx: 1440, ballPositiony: -640, camPositionx: 1440, camPositiony: -80)
+    
+    var level2 = Levels(level: 2, levelComplete: false, ballPositionx: 3200, ballPositiony: -640, camPositionx: 3200, camPositiony: -80)
+    
+    var level3 = Levels(level: 3, levelComplete: false, ballPositionx: 4880, ballPositiony: -720, camPositionx: 4880, camPositiony: -80)
+    
+    var level4 = Levels(level: 4, levelComplete: false, ballPositionx: 6560, ballPositiony: -640, camPositionx: 6560, camPositiony: -80)
+    
     
     
     
@@ -30,19 +37,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         ball.physicsBody?.velocity.dy = 200
         
+        if(level1.levelComplete == false && level == 1){
+            ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
+            cam.position = CGPoint(x: level1.camPositionx, y: level1.camPositiony)
+            level1.levelComplete = true
+        }
+        else if(level2.levelComplete == false && level == 2){
+            ball.position = CGPoint(x: level2.ballPositionx, y: level2.ballPositiony)
+            cam.position = CGPoint(x: level2.camPositionx, y: level2.camPositiony)
+            level2.levelComplete = true
+        }
+        else if(level3.levelComplete == false && level == 3){
+            ball.position = CGPoint(x: level3.ballPositionx, y: level3.ballPositiony)
+            cam.position = CGPoint(x: level3.camPositionx, y: level3.camPositiony)
+            level3.levelComplete = true
+        }
+        else if(level4.levelComplete == false && level == 4){
+            ball.position = CGPoint(x: level4.ballPositionx, y: level4.ballPositiony)
+            cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
+            level4.levelComplete = true
+        }
         
-        if(level == 1 && level1Complete == false){
-            level1()
-            level1Complete = true
-        }
-        if(level == 2 && level2Complete == false){
-            level2()
-            level2Complete = true
-        }
-        if(level == 3 && level3Complete == false){
-            level3()
-            level3Complete = true
-        }
+        
+       
         
         
     }
@@ -53,28 +70,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func rightFunc(){
-        ball.position = CGPoint(x: ball.position.x + 30, y: ball.position.y)
+        ball.position = CGPoint(x: ball.position.x + 40, y: ball.position.y)
     }
     func leftFunc(){
-        ball.position = CGPoint(x: ball.position.x - 30, y: ball.position.y)
+        ball.position = CGPoint(x: ball.position.x - 40, y: ball.position.y)
     }
     
-    
-    
-    func level1(){
-        ball.position = CGPoint(x: 1440, y: -640)
-        cam.position = CGPoint(x: 1440, y: -80)
-    }
-    func level2(){
-        ball.position = CGPoint(x: 3200, y: -640)
-        cam.position = CGPoint(x: 3200, y: -80)
-    }
-    func level3(){
-        ball.position = CGPoint(x: 4880, y: -720)
-        cam.position = CGPoint(x: 4880, y: -80)
-    }
     func startFunc(){
-        cam.position = CGPoint(x: 1440, y: -80)
-        ball.position = CGPoint(x: 1440, y: -640)
+        level += 1
     }
+    
 }

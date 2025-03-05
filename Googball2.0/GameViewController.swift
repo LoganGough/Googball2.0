@@ -28,6 +28,7 @@ class GameViewController: UIViewController {
         rightButton.isHidden = true
         
         
+        
        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
