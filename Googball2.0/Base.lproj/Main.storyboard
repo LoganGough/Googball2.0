@@ -41,24 +41,6 @@
                                     <action selector="right:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CW5-JL-Rjv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLx-3h-fng">
-                                <rect key="frame" x="308" y="27" width="63" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="reset"/>
-                                <connections>
-                                    <action selector="resetButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Wrq-Af-gev"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koP-Mj-lqd">
-                                <rect key="frame" x="40" y="27" width="67" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="home"/>
-                                <connections>
-                                    <action selector="homeButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Cdf-Xq-o3b"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE6-7S-uIh">
                                 <rect key="frame" x="126" y="302" width="135" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -80,21 +62,51 @@
                                     <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="F1p-ad-HHh"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reset2" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-9M-2nl">
+                                <rect key="frame" x="238" y="2" width="91" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yNu-0J-fXk" appends="YES" id="rVw-le-yIq"/>
+                                    <outletCollection property="gestureRecognizers" destination="yNu-0J-fXk" appends="YES" id="hWH-dm-c0b"/>
+                                    <outletCollection property="gestureRecognizers" destination="yNu-0J-fXk" appends="YES" id="TCE-TY-Zq9"/>
+                                    <outletCollection property="gestureRecognizers" destination="yNu-0J-fXk" appends="YES" id="oKU-WS-VnG"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home2" translatesAutoresizingMaskIntoConstraints="NO" id="yEI-Rn-yjQ">
+                                <rect key="frame" x="317" y="14" width="76" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="n2W-5h-xI7" appends="YES" id="RnD-g6-YLL"/>
+                                    <outletCollection property="gestureRecognizers" destination="n2W-5h-xI7" appends="YES" id="ymJ-ke-XNj"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="endless" destination="vwn-da-YN2" id="1JU-Ea-aTz"/>
-                        <outlet property="home" destination="koP-Mj-lqd" id="eJc-2K-ha2"/>
+                        <outlet property="homeOut" destination="yEI-Rn-yjQ" id="cTz-Ca-5ef"/>
                         <outlet property="leftButton" destination="o06-bc-Jbf" id="uLF-Ns-HDs"/>
                         <outlet property="playButton" destination="EE6-7S-uIh" id="iyK-hh-jqh"/>
-                        <outlet property="reset" destination="dLx-3h-fng" id="qoe-xq-HA6"/>
+                        <outlet property="resetOut" destination="GN0-9M-2nl" id="Vg9-LD-Czb"/>
                         <outlet property="rightButton" destination="I6L-md-hFO" id="JvI-RX-C5H"/>
                         <outlet property="settingsButton" destination="m7H-gW-7F7" id="6HI-on-T6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yNu-0J-fXk">
+                    <connections>
+                        <action selector="resetTap:" destination="BV1-FR-VrT" id="IMw-cJ-NYO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="n2W-5h-xI7">
+                    <connections>
+                        <action selector="homeTap:" destination="BV1-FR-VrT" id="BGS-fM-pXc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
@@ -122,6 +134,8 @@
     </scenes>
     <resources>
         <image name="100picturesofhearts" width="1200" height="986"/>
+        <image name="home2" width="226" height="200"/>
+        <image name="reset2" width="500" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

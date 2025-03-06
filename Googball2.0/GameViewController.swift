@@ -21,9 +21,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var settingsButton: UIButton!
     
-    @IBOutlet weak var reset: UIButton!
+    @IBOutlet weak var homeOut: UIImageView!
     
-    @IBOutlet weak var home: UIButton!
+    @IBOutlet weak var resetOut: UIImageView!
     
     
     @IBOutlet weak var endless: UIButton!
@@ -32,8 +32,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         leftButton.isHidden = true
         rightButton.isHidden = true
-        home.isHidden = true
-        reset.isHidden = true
+        homeOut.isHidden = true
+        resetOut.isHidden = true
         
         
         
@@ -84,29 +84,19 @@ class GameViewController: UIViewController {
         
         playButton.isHidden = true
         settingsButton.isHidden = true
+        endless.isHidden = true
         leftButton.isHidden = false
         rightButton.isHidden = false
-        home.isHidden = false
-        reset.isHidden = false
+        homeOut.isHidden = false
+        resetOut.isHidden = false
         play.startFunc()
         
     }
     
     
-    @IBAction func homeButton(_ sender: Any) {
-        playButton.isHidden = false
-        settingsButton.isHidden = false
-        leftButton.isHidden = true
-        rightButton.isHidden = true
-        home.isHidden = true
-        reset.isHidden = true
-        
-        play.homeFunc()
-    }
     
-    @IBAction func resetButton(_ sender: Any) {
-        play.resetfunc()
-    }
+    
+
     
     @IBAction func endlessButton(_ sender: Any) {
         playButton.isHidden = true
@@ -114,9 +104,26 @@ class GameViewController: UIViewController {
         endless.isHidden = true
         leftButton.isHidden = false
         rightButton.isHidden = false
-        home.isHidden = false
-        reset.isHidden = false
+        homeOut.isHidden = false
+        resetOut.isHidden = false
         play.endlessFunc()
     }
+        
+    @IBAction func homeTap(_ sender: UITapGestureRecognizer) {
+        playButton.isHidden = false
+        settingsButton.isHidden = false
+        endless.isHidden = false
+        leftButton.isHidden = true
+        rightButton.isHidden = true
+        homeOut.isHidden = true
+        resetOut.isHidden = true
+        
+        play.homeFunc()
+    }
     
+    
+    
+    @IBAction func resetTap(_ sender: UITapGestureRecognizer) {
+        play.resetfunc()
+    }
 }

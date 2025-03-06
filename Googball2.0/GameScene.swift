@@ -92,7 +92,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cam.position = CGPoint(x: 0, y: 0)
     }
     func endlessFunc(){
-        cam.position = CGPoint(x: -3840, y: -1120)
-        ball.position = CGPoint(x: -3840, y: -1120)
+        ball.physicsBody?.velocity.dy = 0
+        cam.position = CGPoint(x: 0, y: -3840)
     }
+    
 }
