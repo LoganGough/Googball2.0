@@ -25,16 +25,6 @@
                                     <action selector="left:" destination="BV1-FR-VrT" eventType="touchUpInside" id="SPN-dE-s5J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE6-7S-uIh">
-                                <rect key="frame" x="126" y="348" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.23582972729774587" green="0.1249187133448834" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Play!"/>
-                                <connections>
-                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fbG-3I-hdg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7H-gW-7F7">
                                 <rect key="frame" x="126" y="421" width="135" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,13 +41,55 @@
                                     <action selector="right:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CW5-JL-Rjv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLx-3h-fng">
+                                <rect key="frame" x="308" y="27" width="63" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Wrq-Af-gev"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koP-Mj-lqd">
+                                <rect key="frame" x="40" y="27" width="67" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="home"/>
+                                <connections>
+                                    <action selector="homeButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Cdf-Xq-o3b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE6-7S-uIh">
+                                <rect key="frame" x="126" y="302" width="135" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.23582972729774587" green="0.1249187133448834" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play!"/>
+                                <connections>
+                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fbG-3I-hdg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwn-da-YN2">
+                                <rect key="frame" x="126" y="364" width="135" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="endless"/>
+                                <connections>
+                                    <action selector="endlessButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="yDQ-ji-vL3"/>
+                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="F1p-ad-HHh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="endless" destination="vwn-da-YN2" id="1JU-Ea-aTz"/>
+                        <outlet property="home" destination="koP-Mj-lqd" id="eJc-2K-ha2"/>
                         <outlet property="leftButton" destination="o06-bc-Jbf" id="uLF-Ns-HDs"/>
                         <outlet property="playButton" destination="EE6-7S-uIh" id="iyK-hh-jqh"/>
+                        <outlet property="reset" destination="dLx-3h-fng" id="qoe-xq-HA6"/>
                         <outlet property="rightButton" destination="I6L-md-hFO" id="JvI-RX-C5H"/>
                         <outlet property="settingsButton" destination="m7H-gW-7F7" id="6HI-on-T6V"/>
                     </connections>

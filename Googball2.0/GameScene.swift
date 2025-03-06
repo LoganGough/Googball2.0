@@ -79,5 +79,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func startFunc(){
         level += 1
     }
+    func resetfunc(){
+        level = 1
+        level1.levelComplete = false
+        level2.levelComplete = false
+        level3.levelComplete = false
+        level4.levelComplete = false
+    }
+    func homeFunc(){
+        cam.position = CGPoint(x: 0, y: 0)
+    }
     
 }

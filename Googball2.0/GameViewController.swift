@@ -21,11 +21,19 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var settingsButton: UIButton!
     
+    @IBOutlet weak var reset: UIButton!
+    
+    @IBOutlet weak var home: UIButton!
+    
+    
+    @IBOutlet weak var endless: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         leftButton.isHidden = true
         rightButton.isHidden = true
+        home.isHidden = true
+        reset.isHidden = true
         
         
         
@@ -78,8 +86,36 @@ class GameViewController: UIViewController {
         settingsButton.isHidden = true
         leftButton.isHidden = false
         rightButton.isHidden = false
+        home.isHidden = false
+        reset.isHidden = false
         play.startFunc()
         
+    }
+    
+    
+    @IBAction func homeButton(_ sender: Any) {
+        playButton.isHidden = false
+        settingsButton.isHidden = false
+        leftButton.isHidden = true
+        rightButton.isHidden = true
+        home.isHidden = true
+        reset.isHidden = true
+        
+        play.homeFunc()
+    }
+    
+    @IBAction func resetButton(_ sender: Any) {
+        play.resetfunc()
+    }
+    
+    @IBAction func endlessButton(_ sender: Any) {
+        playButton.isHidden = true
+        settingsButton.isHidden = true
+        endless.isHidden = true
+        leftButton.isHidden = false
+        rightButton.isHidden = false
+        home.isHidden = false
+        reset.isHidden = false
     }
     
 }
