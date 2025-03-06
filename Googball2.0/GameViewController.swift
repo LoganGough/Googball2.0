@@ -116,6 +116,7 @@ class GameViewController: UIViewController {
         rightButton.isHidden = false
         home.isHidden = false
         reset.isHidden = false
+        play.endlessFunc()
     }
     
 }

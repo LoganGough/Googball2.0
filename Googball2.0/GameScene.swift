@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var level3 = Levels(level: 3, levelComplete: false, ballPositionx: 4880, ballPositiony: -720, camPositionx: 4880, camPositiony: -80)
     
     var level4 = Levels(level: 4, levelComplete: false, ballPositionx: 6560, ballPositiony: -640, camPositionx: 6560, camPositiony: -80)
+    var endless = Levels(level: 0, levelComplete: false, ballPositionx: -3840, ballPositiony: -1120, camPositionx: -3840, camPositiony: -640)
     
     
     
@@ -59,6 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
+        
        
         
         
@@ -89,5 +91,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func homeFunc(){
         cam.position = CGPoint(x: 0, y: 0)
     }
-    
+    func endlessFunc(){
+        cam.position = CGPoint(x: -3840, y: -1120)
+        ball.position = CGPoint(x: -3840, y: -1120)
+    }
 }
