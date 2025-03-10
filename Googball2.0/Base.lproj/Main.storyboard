@@ -61,7 +61,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="endless"/>
                                 <connections>
                                     <action selector="endlessButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="yDQ-ji-vL3"/>
-                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="F1p-ad-HHh"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reset2" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-9M-2nl">
