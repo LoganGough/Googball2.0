@@ -21,9 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endlessWall4: SKSpriteNode!
     var endlessWall5: SKSpriteNode!
     var endlessWall6: SKSpriteNode!
-    var endlessWall7: SKSpriteNode!
-    var endlessWall8: SKSpriteNode!
-    var endlessWall9: SKSpriteNode!
+  
 
 
     var level1 = Levels(level: 1, levelComplete: false, ballPositionx: 1440, ballPositiony: -640, camPositionx: 1440, camPositiony: -80)
@@ -43,6 +41,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.camera = cam
         ball = self.childNode(withName: "ball") as! SKSpriteNode
         endlessWall1 = self.childNode(withName: "endlessWall1") as! SKSpriteNode
+        endlessWall2 = self.childNode(withName: "endlessWall2") as! SKSpriteNode
+        endlessWall3 = self.childNode(withName: "endlessWall3") as! SKSpriteNode
+        endlessWall4 = self.childNode(withName: "endlessWall4") as! SKSpriteNode
+        endlessWall5 = self.childNode(withName: "endlessWall5") as! SKSpriteNode
+        endlessWall6 = self.childNode(withName: "endlessWall6") as! SKSpriteNode
+
         physicsWorld.contactDelegate = self
     
     }
@@ -105,8 +109,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func endlessFunc(){
         ball.physicsBody?.velocity.dy = 0
         endlessWall1.physicsBody?.velocity.dy = -200
+        endlessWall2.physicsBody?.velocity.dy = -200
+        endlessWall3.physicsBody?.velocity.dy = -200
+        endlessWall4.physicsBody?.velocity.dy = -200
+        endlessWall5.physicsBody?.velocity.dy = -200
+        endlessWall6.physicsBody?.velocity.dy = -200
+
         cam.position = CGPoint(x: -3840, y: 3200)
         print(cam.position)
+        
+        if endlessWall1.position.y == 3000{
+            endlessWall1.position.y = 3200
+        }
     }
     
 }
