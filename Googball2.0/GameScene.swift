@@ -15,6 +15,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var level = 0
     var levelArray = [Levels]()
     var makeLevels = true
+    var endlessWall1: SKSpriteNode!
+    var endlessWall2: SKSpriteNode!
+    var endlessWall3: SKSpriteNode!
+    var endlessWall4: SKSpriteNode!
+    var endlessWall5: SKSpriteNode!
+    var endlessWall6: SKSpriteNode!
+    var endlessWall7: SKSpriteNode!
+    var endlessWall8: SKSpriteNode!
+    var endlessWall9: SKSpriteNode!
+
+
     var level1 = Levels(level: 1, levelComplete: false, ballPositionx: 1440, ballPositiony: -640, camPositionx: 1440, camPositiony: -80)
     
     var level2 = Levels(level: 2, levelComplete: false, ballPositionx: 3200, ballPositiony: -640, camPositionx: 3200, camPositiony: -80)
@@ -31,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         self.camera = cam
         ball = self.childNode(withName: "ball") as! SKSpriteNode
-        
+        endlessWall1 = self.childNode(withName: "endlessWall1") as! SKSpriteNode
         physicsWorld.contactDelegate = self
     
     }
@@ -93,7 +104,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     func endlessFunc(){
         ball.physicsBody?.velocity.dy = 0
-        cam.position = CGPoint(x: 0, y: -3840)
+        endlessWall1.physicsBody?.velocity.dy = -200
+        cam.position = CGPoint(x: -3840, y: 3200)
+        print(cam.position)
     }
     func level1Func(){
         ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
