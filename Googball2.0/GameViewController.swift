@@ -25,8 +25,12 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var resetOut: UIImageView!
     
+    @IBOutlet weak var levelsButton: UIButton!
     
     @IBOutlet weak var endless: UIButton!
+    
+    
+    var blah = AppData.currentLevel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,8 @@ class GameViewController: UIViewController {
         rightButton.isHidden = true
         homeOut.isHidden = true
         resetOut.isHidden = true
+        
+        
         
         
         
@@ -89,6 +95,7 @@ class GameViewController: UIViewController {
         rightButton.isHidden = false
         homeOut.isHidden = false
         resetOut.isHidden = false
+        levelsButton.isHidden = true
         play.startFunc()
         
     }
@@ -120,10 +127,41 @@ class GameViewController: UIViewController {
         
         play.homeFunc()
     }
-    
+
     
     
     @IBAction func resetTap(_ sender: UITapGestureRecognizer) {
         play.resetfunc()
+    }
+    func startPlay(){
+        playButton.isHidden = true
+        settingsButton.isHidden = true
+        endless.isHidden = true
+        leftButton.isHidden = false
+        rightButton.isHidden = false
+        homeOut.isHidden = false
+        resetOut.isHidden = false
+        levelsButton.isHidden = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if(AppData.boolView){
+            if(blah == 1){
+                play.level1Func()
+                startPlay()
+            }
+            else if(blah == 2){
+                play.level2Func()
+                startPlay()
+            }
+            else if(blah == 3){
+                play.level3Func()
+                startPlay()
+            }
+            else if(blah == 4){
+                play.level4Func()
+                startPlay()
+            }
+        }
+        AppData.boolView = false
     }
 }

@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Googball2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o06-bc-Jbf">
@@ -42,17 +42,6 @@
                                     <action selector="right:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CW5-JL-Rjv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z47-Xf-Oxj">
-                                <rect key="frame" x="126" y="314" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="View Levels"/>
-                                <connections>
-                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wop-Bu-a8A"/>
-                                    <segue destination="vRa-bQ-0eG" kind="showDetail" id="jUv-rQ-dvl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwn-da-YN2">
                                 <rect key="frame" x="126" y="364" width="135" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,7 +49,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="endless"/>
                                 <connections>
-                                    <action selector="endlessButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="yDQ-ji-vL3"/>
+                                    <action selector="endlessButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="aJ0-c0-lHP"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reset2" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-9M-2nl">
@@ -90,18 +79,29 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play!"/>
                                 <connections>
-                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fbG-3I-hdg"/>
+                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ibd-uu-XpB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-Ia-vQp">
+                                <rect key="frame" x="126" y="304" width="135" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="View Levels"/>
+                                <connections>
+                                    <segue destination="vRa-bQ-0eG" kind="showDetail" id="Cz2-ha-vSG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8qE-7f-KfM"/>
                     <connections>
-                        <outlet property="endless" destination="vwn-da-YN2" id="1JU-Ea-aTz"/>
+                        <outlet property="endless" destination="vwn-da-YN2" id="n02-FN-C3a"/>
                         <outlet property="homeOut" destination="yEI-Rn-yjQ" id="cTz-Ca-5ef"/>
                         <outlet property="leftButton" destination="o06-bc-Jbf" id="uLF-Ns-HDs"/>
-                        <outlet property="playButton" destination="EE6-7S-uIh" id="iyK-hh-jqh"/>
+                        <outlet property="levelsButton" destination="bsc-Ia-vQp" id="8kL-uq-XO2"/>
+                        <outlet property="playButton" destination="EE6-7S-uIh" id="Nna-9L-jNo"/>
                         <outlet property="resetOut" destination="GN0-9M-2nl" id="Vg9-LD-Czb"/>
                         <outlet property="rightButton" destination="I6L-md-hFO" id="JvI-RX-C5H"/>
                         <outlet property="settingsButton" destination="m7H-gW-7F7" id="6HI-on-T6V"/>
@@ -177,6 +177,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewOutlet" destination="VCn-e8-ap9" id="MBQ-1T-6Wh"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="segue1" id="ecY-NE-CFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nt-8S-y7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

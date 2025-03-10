@@ -5,6 +5,11 @@
 //  Created by LOGAN GOUGH on 3/7/25.
 //
 
+class AppData{
+    static var currentLevel = 1
+    static var boolView = false
+    
+}
 import UIKit
 
 class SecondViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -35,9 +40,15 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CrazyCell
         //cell.backgroundColor = UIColor.red
-        cell.label1.text = "HI"
-        count += 1
-        print("cell")
+        cell.label1.text = String(indexPath.row + 1)
+        
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        AppData.currentLevel = (indexPath.row + 1)
+        print(indexPath.row + 1)
+        performSegue(withIdentifier: "segue1", sender: self)
+        
+        AppData.boolView = true
     }
 }

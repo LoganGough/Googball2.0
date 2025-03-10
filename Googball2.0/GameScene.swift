@@ -122,5 +122,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             endlessWall1.position.y = 3200
         }
     }
+    func level1Func(){
+        ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
+        cam.position = CGPoint(x: level1.camPositionx, y: level1.camPositiony)
+    }
+    func level2Func(){
+        ball.position = CGPoint(x: level2.ballPositionx, y: level2.ballPositiony)
+        cam.position = CGPoint(x: level2.camPositionx, y: level2.camPositiony)
+    }
+    func level3Func(){
+        ball.position = CGPoint(x: level3.ballPositionx, y: level3.ballPositiony)
+        cam.position = CGPoint(x: level3.camPositionx, y: level3.camPositiony)
+    }
+    func level4Func(){
+        ball.position = CGPoint(x: level4.ballPositionx, y: level4.ballPositiony)
+        cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
+    }
     
 }
