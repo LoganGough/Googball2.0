@@ -21,7 +21,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endlessWall4: SKSpriteNode!
     var endlessWall5: SKSpriteNode!
     var endlessWall6: SKSpriteNode!
-  
+    var endlessWall7: SKSpriteNode!
+    var endlessWall8: SKSpriteNode!
+    var endlessWall9: SKSpriteNode!
+    var endlessWall10: SKSpriteNode!
+    var endlessWall11: SKSpriteNode!
+    var endlessWall12: SKSpriteNode!
+    var endlessWall13: SKSpriteNode!
+    var endlessWall14: SKSpriteNode!
+
+    let resetPositionY: CGFloat = 5120
+    let resetThresholdY: CGFloat = -2800
+    var isEndless: Bool = false
+    var isNormal: Bool = false
 
 
     var level1 = Levels(level: 1, levelComplete: false, ballPositionx: 1440, ballPositiony: -640, camPositionx: 1440, camPositiony: -80)
@@ -53,28 +65,52 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         ball.physicsBody?.velocity.dy = 200
         
-        if(level1.levelComplete == false && level == 1){
-            ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
-            cam.position = CGPoint(x: level1.camPositionx, y: level1.camPositiony)
-            level1.levelComplete = true
-        }
-        else if(level2.levelComplete == false && level == 2){
-            ball.position = CGPoint(x: level2.ballPositionx, y: level2.ballPositiony)
-            cam.position = CGPoint(x: level2.camPositionx, y: level2.camPositiony)
-            level2.levelComplete = true
-        }
-        else if(level3.levelComplete == false && level == 3){
-            ball.position = CGPoint(x: level3.ballPositionx, y: level3.ballPositiony)
-            cam.position = CGPoint(x: level3.camPositionx, y: level3.camPositiony)
-            level3.levelComplete = true
-        }
-        else if(level4.levelComplete == false && level == 4){
-            ball.position = CGPoint(x: level4.ballPositionx, y: level4.ballPositiony)
-            cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
-            level4.levelComplete = true
+        if isNormal == true{
+            if(level1.levelComplete == false && level == 1){
+                ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
+                cam.position = CGPoint(x: level1.camPositionx, y: level1.camPositiony)
+                level1.levelComplete = true
+            }
+            else if(level2.levelComplete == false && level == 2){
+                ball.position = CGPoint(x: level2.ballPositionx, y: level2.ballPositiony)
+                cam.position = CGPoint(x: level2.camPositionx, y: level2.camPositiony)
+                level2.levelComplete = true
+            }
+            else if(level3.levelComplete == false && level == 3){
+                ball.position = CGPoint(x: level3.ballPositionx, y: level3.ballPositiony)
+                cam.position = CGPoint(x: level3.camPositionx, y: level3.camPositiony)
+                level3.levelComplete = true
+            }
+            else if(level4.levelComplete == false && level == 4){
+                ball.position = CGPoint(x: level4.ballPositionx, y: level4.ballPositiony)
+                cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
+                level4.levelComplete = true
+            }
         }
         
         
+        if isEndless == true{
+            endlessUpdate()
+            print("Updating Endless")
+            endlessWall1.physicsBody?.velocity.dy = -200
+            endlessWall2.physicsBody?.velocity.dy = -200
+            endlessWall3.physicsBody?.velocity.dy = -200
+            endlessWall4.physicsBody?.velocity.dy = -200
+            endlessWall5.physicsBody?.velocity.dy = -200
+            endlessWall6.physicsBody?.velocity.dy = -200
+            endlessWall7.physicsBody?.velocity.dy = -200
+            endlessWall8.physicsBody?.velocity.dy = -200
+            endlessWall9.physicsBody?.velocity.dy = -200
+            endlessWall10.physicsBody?.velocity.dy = -200
+            endlessWall11.physicsBody?.velocity.dy = -200
+            endlessWall12.physicsBody?.velocity.dy = -200
+            endlessWall13.physicsBody?.velocity.dy = -200
+            endlessWall14.physicsBody?.velocity.dy = -200
+            ball.physicsBody?.velocity.dy = 0
+            
+
+
+        }
         
        
         
@@ -108,19 +144,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     func endlessFunc(){
         ball.physicsBody?.velocity.dy = 0
-        endlessWall1.physicsBody?.velocity.dy = -200
-        endlessWall2.physicsBody?.velocity.dy = -200
-        endlessWall3.physicsBody?.velocity.dy = -200
-        endlessWall4.physicsBody?.velocity.dy = -200
-        endlessWall5.physicsBody?.velocity.dy = -200
-        endlessWall6.physicsBody?.velocity.dy = -200
+        let wallSpeed: CGFloat = -200
+        endlessWall1.physicsBody?.angularDamping = 0
 
-        cam.position = CGPoint(x: -3840, y: 3200)
-        print(cam.position)
         
-        if endlessWall1.position.y == 3000{
-            endlessWall1.position.y = 3200
-        }
+
+        endlessWall1.physicsBody?.velocity.dy = wallSpeed
+        endlessWall2.physicsBody?.velocity.dy = wallSpeed
+        endlessWall3.physicsBody?.velocity.dy = wallSpeed
+        endlessWall4.physicsBody?.velocity.dy = wallSpeed
+        endlessWall5.physicsBody?.velocity.dy = wallSpeed
+        endlessWall6.physicsBody?.velocity.dy = wallSpeed
+        endlessWall8.physicsBody?.velocity.dy = wallSpeed
+        endlessWall9.physicsBody?.velocity.dy = wallSpeed
+        endlessWall10.physicsBody?.velocity.dy = wallSpeed
+        endlessWall11.physicsBody?.velocity.dy = wallSpeed
+        endlessWall12.physicsBody?.velocity.dy = wallSpeed
+        endlessWall13.physicsBody?.velocity.dy = wallSpeed
+        endlessWall14.physicsBody?.velocity.dy = wallSpeed
+        endlessWall7.physicsBody?.velocity.dy = wallSpeed
+
+
+        cam.position = CGPoint(x: -3840, y: -1280)
+        ball.position = CGPoint(x: -3840, y: -1280)
+        print(cam.position)
+
+        
     }
     func level1Func(){
         ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
@@ -138,5 +187,64 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.position = CGPoint(x: level4.ballPositionx, y: level4.ballPositiony)
         cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
     }
-    
+    func endlessUpdate(){
+        // Reset each wall individually while preserving order
+        // Reset each wall individually while preserving order
+        if endlessWall1.position.y <= resetThresholdY {
+            endlessWall1.position.y = resetPositionY
+        }
+
+        if endlessWall2.position.y <= resetThresholdY {
+            endlessWall2.position.y = resetPositionY
+        }
+
+        if endlessWall3.position.y <= resetThresholdY {
+            endlessWall3.position.y = resetPositionY
+        }
+
+        if endlessWall4.position.y <= resetThresholdY {
+            endlessWall4.position.y = resetPositionY
+        }
+
+        if endlessWall5.position.y <= resetThresholdY {
+            endlessWall5.position.y = resetPositionY
+        }
+
+        if endlessWall6.position.y <= resetThresholdY {
+            endlessWall6.position.y = resetPositionY
+        }
+
+        if endlessWall7.position.y <= resetThresholdY {
+            endlessWall7.position.y = resetPositionY
+        }
+
+        if endlessWall8.position.y <= resetThresholdY {
+            endlessWall8.position.y = resetPositionY
+        }
+
+        if endlessWall9.position.y <= resetThresholdY {
+            endlessWall9.position.y = resetPositionY
+        }
+
+        if endlessWall10.position.y <= resetThresholdY {
+            endlessWall10.position.y = resetPositionY
+        }
+
+        if endlessWall11.position.y <= resetThresholdY {
+            endlessWall11.position.y = resetPositionY
+        }
+
+        if endlessWall12.position.y <= resetThresholdY {
+            endlessWall12.position.y = resetPositionY
+        }
+
+        if endlessWall13.position.y <= resetThresholdY {
+            endlessWall13.position.y = resetPositionY
+        }
+
+        if endlessWall14.position.y <= resetThresholdY {
+            endlessWall14.position.y = resetPositionY
+        }
+
+    }
 }

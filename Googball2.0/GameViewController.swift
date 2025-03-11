@@ -96,6 +96,8 @@ class GameViewController: UIViewController {
         homeOut.isHidden = false
         resetOut.isHidden = false
         levelsButton.isHidden = true
+        play.isNormal = true
+        play.isEndless = false
         play.startFunc()
         
     }
@@ -113,6 +115,10 @@ class GameViewController: UIViewController {
         rightButton.isHidden = false
         homeOut.isHidden = false
         resetOut.isHidden = false
+        levelsButton.isHidden = true
+        play.isNormal = false
+        play.isEndless = true
+        print("Changed isEndless to True")
         play.endlessFunc()
     }
         
