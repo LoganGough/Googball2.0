@@ -11,6 +11,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var ball: SKSpriteNode!
+    var endlessBall: SKSpriteNode!
     let cam = SKCameraNode()
     var level = 0
     var levelArray = [Levels]()
@@ -48,10 +49,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
     override func didMove(to view: SKView) {
         self.camera = cam
         ball = self.childNode(withName: "ball") as! SKSpriteNode
+        endlessBall = self.childNode(withName: "endlessBall") as! SKSpriteNode
         endlessWall1 = self.childNode(withName: "endlessWall1") as! SKSpriteNode
         endlessWall2 = self.childNode(withName: "endlessWall2") as! SKSpriteNode
         endlessWall3 = self.childNode(withName: "endlessWall3") as! SKSpriteNode
@@ -114,7 +115,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             endlessWall12.physicsBody?.velocity.dy = -200
             endlessWall13.physicsBody?.velocity.dy = -200
             endlessWall14.physicsBody?.velocity.dy = -200
-            ball.physicsBody?.velocity.dy = 0
+            endlessBall.physicsBody?.velocity.dy = 0
+            endlessBall.position.y = -1280
             
 
 
@@ -131,10 +133,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func rightFunc(){
-        ball.position = CGPoint(x: ball.position.x + 40, y: ball.position.y)
+        if isNormal == true && isEndless == false{
+            ball.position = CGPoint(x: ball.position.x + 40, y: ball.position.y)
+        }else if isNormal == false && isEndless == true{
+            endlessBall.position = CGPoint(x: endlessBall.position.x + 40, y: endlessBall.position.y)
+        } else{
+            print("ERROR")
+        }
     }
     func leftFunc(){
-        ball.position = CGPoint(x: ball.position.x - 40, y: ball.position.y)
+        if isNormal == true && isEndless == false{
+            ball.position = CGPoint(x: ball.position.x - 40, y: ball.position.y)
+        }else if isNormal == false && isEndless == true{
+            endlessBall.position = CGPoint(x: endlessBall.position.x - 40, y: endlessBall.position.y)
+        }else{
+            print("ERROR")
+        }
     }
     
     func startFunc(){
@@ -174,7 +188,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
 
         cam.position = CGPoint(x: -3840, y: -1280)
-        ball.position = CGPoint(x: -3840, y: -1280)
+        endlessBall.position = CGPoint(x: -3840, y: -1280)
         print(cam.position)
 
         
