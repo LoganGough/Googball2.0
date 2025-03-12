@@ -74,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         ball.physicsBody?.velocity.dy = 200
         
-        if isNormal == true{
+       if isNormal == true{
             if(level1.levelComplete == false && level == 1){
                 ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
                 cam.position = CGPoint(x: level1.camPositionx, y: level1.camPositiony)
@@ -155,7 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         level += 1
     }
     func resetfunc(){
-        level = 1
+        level = 0
         level1.levelComplete = false
         level2.levelComplete = false
         level3.levelComplete = false

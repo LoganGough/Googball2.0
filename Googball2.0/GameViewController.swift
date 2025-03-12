@@ -87,7 +87,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func playButton(_ sender: Any) {
-        
+        play.resetfunc()
         playButton.isHidden = true
         settingsButton.isHidden = true
         endless.isHidden = true
@@ -130,6 +130,7 @@ class GameViewController: UIViewController {
         rightButton.isHidden = true
         homeOut.isHidden = true
         resetOut.isHidden = true
+        levelsButton.isHidden = false
         
         play.homeFunc()
     }
