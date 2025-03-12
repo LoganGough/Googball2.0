@@ -58,6 +58,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         endlessWall4 = self.childNode(withName: "endlessWall4") as! SKSpriteNode
         endlessWall5 = self.childNode(withName: "endlessWall5") as! SKSpriteNode
         endlessWall6 = self.childNode(withName: "endlessWall6") as! SKSpriteNode
+        endlessWall7 = self.childNode(withName: "endlessWall7") as! SKSpriteNode
+        endlessWall8 = self.childNode(withName: "endlessWall8") as! SKSpriteNode
+        endlessWall9 = self.childNode(withName: "endlessWall9") as! SKSpriteNode
+        endlessWall10 = self.childNode(withName: "endlessWall10") as! SKSpriteNode
+        endlessWall11 = self.childNode(withName: "endlessWall11") as! SKSpriteNode
+        endlessWall12 = self.childNode(withName: "endlessWall12") as! SKSpriteNode
+        endlessWall13 = self.childNode(withName: "endlessWall13") as! SKSpriteNode
+        endlessWall14 = self.childNode(withName: "endlessWall14") as! SKSpriteNode
 
         physicsWorld.contactDelegate = self
     
