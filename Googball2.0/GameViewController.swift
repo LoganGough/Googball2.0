@@ -101,7 +101,7 @@ class GameViewController: UIViewController {
         play.isNormal = true
         play.isEndless = false
         play.startFunc()
-        googLabel.textColor = UIColor.gray
+        googLabel.textColor = UIColor.lightGray
         
     }
     
@@ -123,6 +123,7 @@ class GameViewController: UIViewController {
         play.isEndless = true
         print("Changed isEndless to True")
         play.endlessFunc()
+        googLabel.textColor = UIColor.lightGray
     }
         
     @IBAction func homeTap(_ sender: UITapGestureRecognizer) {
@@ -134,6 +135,7 @@ class GameViewController: UIViewController {
         homeOut.isHidden = true
         resetOut.isHidden = true
         levelsButton.isHidden = false
+        googLabel.textColor = UIColor.black
         
         play.homeFunc()
     }
@@ -154,21 +156,26 @@ class GameViewController: UIViewController {
         levelsButton.isHidden = true
     }
     override func viewDidAppear(_ animated: Bool) {
+        play.playTrue()
         if(AppData.boolView){
             if(blah == 1){
                 play.level1Func()
+                googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
             else if(blah == 2){
                 play.level2Func()
+                googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
             else if(blah == 3){
                 play.level3Func()
+                googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
             else if(blah == 4){
                 play.level4Func()
+                googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
         }
