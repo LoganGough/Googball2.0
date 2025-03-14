@@ -86,6 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     override func update(_ currentTime: TimeInterval) {
         ball.physicsBody?.velocity.dy = 200
+        ball.physicsBody?.velocity.dx = 0
         
        if isNormal == true{
             if(level1.levelComplete == false && level == 1){
@@ -113,7 +114,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if isEndless == true{
             endlessUpdate()
-            print("Updating Endless")
+            //print("Updating Endless")
             endlessWall1.physicsBody?.velocity.dy = -200
             endlessWall2.physicsBody?.velocity.dy = -200
             endlessWall3.physicsBody?.velocity.dy = -200
@@ -146,9 +147,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
     }
+    func playTrue(){
+        isNormal = true
+        isEndless = false
+    }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        level += 1
+        if contact.bodyA.node?.name == "ball" && contact.bodyB.node?.name == "red"{
+            level += 1
+        }
+        if contact.bodyB.node?.name == "ball" && contact.bodyA.node?.name == "red"{
+            level += 1
+        }
+        if contact.bodyA.node?.name == "ball" && contact.bodyB.node?.name == "reset"{
+            level += 1
+        }
+        if contact.bodyB.node?.name == "ball" && contact.bodyA.node?.name == "reset"{
+            level += 1
+        }
+        
+        
+       
     }
     
     
@@ -311,6 +330,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         if endlessWall20.position.y <= resetThresholdY {
             endlessWall20.position.y = resetPositionY
+        }
+    }
+    func levelDeath(){
+        if(level == 1){
+            ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
+        }
+        else if(level == 2){
+            ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
         }
     }
 }
