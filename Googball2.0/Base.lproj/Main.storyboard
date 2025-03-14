@@ -17,43 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o06-bc-Jbf">
-                                <rect key="frame" x="0.0" y="704" width="147" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Left"/>
-                                <connections>
-                                    <action selector="left:" destination="BV1-FR-VrT" eventType="touchUpInside" id="SPN-dE-s5J"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7H-gW-7F7">
-                                <rect key="frame" x="126" y="421" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Settings"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6L-md-hFO">
-                                <rect key="frame" x="238" y="705" width="155" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Right"/>
-                                <connections>
-                                    <action selector="right:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CW5-JL-Rjv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwn-da-YN2">
-                                <rect key="frame" x="126" y="364" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="endless"/>
-                                <connections>
-                                    <action selector="endlessButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="aJ0-c0-lHP"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reset2" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-9M-2nl">
-                                <rect key="frame" x="41" y="2" width="91" height="73"/>
+                                <rect key="frame" x="41" y="-262.33333333333331" width="91" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -72,33 +37,97 @@
                                     <outletCollection property="gestureRecognizers" destination="n2W-5h-xI7" appends="YES" id="ymJ-ke-XNj"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-Ia-vQp">
-                                <rect key="frame" x="126" y="304" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="View Levels"/>
-                                <connections>
-                                    <segue destination="vRa-bQ-0eG" kind="showDetail" id="Cz2-ha-vSG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE6-7S-uIh">
-                                <rect key="frame" x="126" y="250" width="135" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.23582972729774587" green="0.1249187133448834" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Play!"/>
-                                <connections>
-                                    <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ibd-uu-XpB"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Googball 2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00h-pi-CMR">
+                                <rect key="frame" x="106" y="124" width="180" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="j5G-q4-iNn">
+                                <rect key="frame" x="140" y="328" width="113" height="274.33333333333326"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE6-7S-uIh">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="54.333333333333336"/>
+                                        <color key="tintColor" red="0.23582972729774587" green="0.1249187133448834" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                        <connections>
+                                            <action selector="playButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ibd-uu-XpB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-Ia-vQp">
+                                        <rect key="frame" x="0.0" y="73.333333333333314" width="113" height="54.333333333333343"/>
+                                        <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="View Levels"/>
+                                        <connections>
+                                            <segue destination="vRa-bQ-0eG" kind="showDetail" id="Cz2-ha-vSG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwn-da-YN2">
+                                        <rect key="frame" x="0.0" y="146.66666666666669" width="113" height="54.333333333333343"/>
+                                        <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Endless"/>
+                                        <connections>
+                                            <action selector="endlessButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="aJ0-c0-lHP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7H-gW-7F7">
+                                        <rect key="frame" x="0.0" y="220" width="113" height="54.333333333333314"/>
+                                        <color key="tintColor" red="0.23582972730000001" green="0.1249187133" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Settings"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="93" translatesAutoresizingMaskIntoConstraints="NO" id="ZML-vQ-v16">
+                                <rect key="frame" x="0.0" y="692" width="393" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o06-bc-Jbf">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Left"/>
+                                        <connections>
+                                            <action selector="left:" destination="BV1-FR-VrT" eventType="touchUpInside" id="SPN-dE-s5J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6L-md-hFO">
+                                        <rect key="frame" x="243" y="0.0" width="150" height="150"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Right"/>
+                                        <connections>
+                                            <action selector="right:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CW5-JL-Rjv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="RZq-7k-py5"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j5G-q4-iNn" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="140" id="61D-wV-NKw"/>
+                            <constraint firstItem="00h-pi-CMR" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="106" id="DZU-wQ-EGo"/>
+                            <constraint firstItem="j5G-q4-iNn" firstAttribute="top" secondItem="00h-pi-CMR" secondAttribute="bottom" constant="168" id="Gcf-9L-6AF"/>
+                            <constraint firstItem="ZML-vQ-v16" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="Ipx-wq-5CA"/>
+                            <constraint firstItem="j5G-q4-iNn" firstAttribute="top" secondItem="00h-pi-CMR" secondAttribute="bottom" constant="168" id="KmA-Mz-sdA"/>
+                            <constraint firstItem="ZML-vQ-v16" firstAttribute="bottom" secondItem="4qk-I5-YsI" secondAttribute="bottom" id="MHr-qF-b4b"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="j5G-q4-iNn" secondAttribute="trailing" constant="140" id="WKn-Sa-dEN"/>
+                            <constraint firstItem="j5G-q4-iNn" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="140" id="XIY-Ns-o8y"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="00h-pi-CMR" secondAttribute="trailing" constant="107" id="cBa-kf-iNM"/>
+                            <constraint firstItem="00h-pi-CMR" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="124" id="cRi-df-wED"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="j5G-q4-iNn" secondAttribute="trailing" constant="140" id="lr7-TM-9D3"/>
+                            <constraint firstItem="j5G-q4-iNn" firstAttribute="top" secondItem="00h-pi-CMR" secondAttribute="bottom" constant="168" id="oLy-Ib-Ym9"/>
+                            <constraint firstItem="ZML-vQ-v16" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="uMv-Jv-2xH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8qE-7f-KfM"/>
                     <connections>
                         <outlet property="endless" destination="vwn-da-YN2" id="n02-FN-C3a"/>
+                        <outlet property="googLabel" destination="00h-pi-CMR" id="HRf-Es-47C"/>
                         <outlet property="homeOut" destination="yEI-Rn-yjQ" id="cTz-Ca-5ef"/>
                         <outlet property="leftButton" destination="o06-bc-Jbf" id="uLF-Ns-HDs"/>
                         <outlet property="levelsButton" destination="bsc-Ia-vQp" id="8kL-uq-XO2"/>

@@ -30,6 +30,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var endless: UIButton!
     
     
+    @IBOutlet weak var googLabel: UILabel!
+    
     var blah = AppData.currentLevel
     
     override func viewDidLoad() {
@@ -99,6 +101,7 @@ class GameViewController: UIViewController {
         play.isNormal = true
         play.isEndless = false
         play.startFunc()
+        googLabel.textColor = UIColor.gray
         
     }
     
