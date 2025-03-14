@@ -30,6 +30,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var endlessWall12: SKSpriteNode!
     var endlessWall13: SKSpriteNode!
     var endlessWall14: SKSpriteNode!
+    var endlessWall15: SKSpriteNode!
+    var endlessWall16: SKSpriteNode!
+    var endlessWall17: SKSpriteNode!
+    var endlessWall18: SKSpriteNode!
+    var endlessWall19: SKSpriteNode!
+    var endlessWall20: SKSpriteNode!
+
 
     let resetPositionY: CGFloat = 5120
     let resetThresholdY: CGFloat = -2800
@@ -67,6 +74,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         endlessWall12 = self.childNode(withName: "endlessWall12") as! SKSpriteNode
         endlessWall13 = self.childNode(withName: "endlessWall13") as! SKSpriteNode
         endlessWall14 = self.childNode(withName: "endlessWall14") as! SKSpriteNode
+        endlessWall15 = self.childNode(withName: "endlessWall15") as! SKSpriteNode
+        endlessWall16 = self.childNode(withName: "endlessWall16") as! SKSpriteNode
+        endlessWall17 = self.childNode(withName: "endlessWall17") as! SKSpriteNode
+        endlessWall18 = self.childNode(withName: "endlessWall18") as! SKSpriteNode
+        endlessWall19 = self.childNode(withName: "endlessWall19") as! SKSpriteNode
+        endlessWall20 = self.childNode(withName: "endlessWall20") as! SKSpriteNode
 
         physicsWorld.contactDelegate = self
     
@@ -115,6 +128,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             endlessWall12.physicsBody?.velocity.dy = -200
             endlessWall13.physicsBody?.velocity.dy = -200
             endlessWall14.physicsBody?.velocity.dy = -200
+            endlessWall15.physicsBody?.velocity.dy = -200
+            endlessWall16.physicsBody?.velocity.dy = -200
+            endlessWall17.physicsBody?.velocity.dy = -200
+            endlessWall18.physicsBody?.velocity.dy = -200
+            endlessWall19.physicsBody?.velocity.dy = -200
+            endlessWall20.physicsBody?.velocity.dy = -200
+
             endlessBall.physicsBody?.velocity.dy = 0
             endlessBall.position.y = -1280
             
@@ -185,6 +205,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         endlessWall13.physicsBody?.velocity.dy = wallSpeed
         endlessWall14.physicsBody?.velocity.dy = wallSpeed
         endlessWall7.physicsBody?.velocity.dy = wallSpeed
+        endlessWall15.physicsBody?.velocity.dy = wallSpeed
+        endlessWall16.physicsBody?.velocity.dy = wallSpeed
+        endlessWall17.physicsBody?.velocity.dy = wallSpeed
+        endlessWall18.physicsBody?.velocity.dy = wallSpeed
+        endlessWall19.physicsBody?.velocity.dy = wallSpeed
+        endlessWall20.physicsBody?.velocity.dy = wallSpeed
+
 
 
         cam.position = CGPoint(x: -3840, y: -1280)
@@ -267,6 +294,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if endlessWall14.position.y <= resetThresholdY {
             endlessWall14.position.y = resetPositionY
         }
-
+        if endlessWall15.position.y <= resetThresholdY {
+            endlessWall15.position.y = resetPositionY
+        }
+        if endlessWall16.position.y <= resetThresholdY {
+            endlessWall16.position.y = resetPositionY
+        }
+        if endlessWall17.position.y <= resetThresholdY {
+            endlessWall17.position.y = resetPositionY
+        }
+        if endlessWall18.position.y <= resetThresholdY {
+            endlessWall18.position.y = resetPositionY
+        }
+        if endlessWall19.position.y <= resetThresholdY {
+            endlessWall19.position.y = resetPositionY
+        }
+        if endlessWall20.position.y <= resetThresholdY {
+            endlessWall20.position.y = resetPositionY
+        }
     }
 }
