@@ -74,6 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         ball.physicsBody?.velocity.dy = 200
         ball.physicsBody?.velocity.dx = 0
+        endlessBall.physicsBody?.velocity.dx = 0
         
        if isNormal == true{
             if(level1.levelComplete == false && level == 1){
@@ -140,10 +141,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             level += 1
         }
         if contact.bodyA.node?.name == "ball" && contact.bodyB.node?.name == "reset"{
-            level += 1
+            levelDeath()
+            print("hitting")
+            
         }
         if contact.bodyB.node?.name == "ball" && contact.bodyA.node?.name == "reset"{
-            level += 1
+            levelDeath()
+            print("hitting")
+            
+            
         }
         
         
@@ -290,10 +296,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     func levelDeath(){
         if(level == 1){
-            ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
+            let reset = SKAction.move(to: CGPoint(x: level1.ballPositionx, y: level1.ballPositiony), duration: 0)
+            ball.run(reset)
+            
+            
         }
         else if(level == 2){
-            ball.position = CGPoint(x: level1.ballPositionx, y: level1.ballPositiony)
+            let reset = SKAction.move(to: CGPoint(x: level2.ballPositionx, y: level2.ballPositiony), duration: 0)
+            ball.run(reset)
         }
+        else if(level == 3){
+            let reset = SKAction.move(to: CGPoint(x: level3.ballPositionx, y: level3.ballPositiony), duration: 0)
+            ball.run(reset)
+        }
+
+        else if(level == 4){
+            let reset = SKAction.move(to: CGPoint(x: level4.ballPositionx, y: level4.ballPositiony), duration: 0)
+            ball.run(reset)
+        }
+
     }
 }
