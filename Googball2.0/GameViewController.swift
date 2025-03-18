@@ -178,6 +178,21 @@ class GameViewController: UIViewController {
                 googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
+            else if(blah == 5){
+                play.level5Func()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 6){
+                play.level6Func()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 7){
+                play.level7Func()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
         }
         AppData.boolView = false
     }
