@@ -377,8 +377,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(level == 1){
             let reset = SKAction.move(to: CGPoint(x: level1.ballPositionx, y: level1.ballPositiony), duration: 0)
             ball.run(reset)
-            
-            
         }
         else if(level == 2){
             let reset = SKAction.move(to: CGPoint(x: level2.ballPositionx, y: level2.ballPositiony), duration: 0)
@@ -406,5 +404,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             ball.run(reset)
         }
 
+    }
+    func levelSet1(){
+        level = 1
+    }
+    func levelSet2(){
+        level = 2
+    }
+    func levelSet3(){
+        level = 3
+    }
+    func levelSet4(){
+        level = 4
+    }
+    func levelSet5(){
+        level = 5
+    }
+    func levelSet6(){
+        level = 6
+    }
+    func levelSet7(){
+        level = 7
     }
 }
