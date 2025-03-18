@@ -53,7 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var level4 = Levels(level: 4, levelComplete: false, ballPositionx: 6560, ballPositiony: -640, camPositionx: 6560, camPositiony: -80)
     var level5 = Levels(level: 5, levelComplete: false, ballPositionx: 8400, ballPositiony: -640, camPositionx: 8480, camPositiony: -40)
     var level6 = Levels(level: 6, levelComplete: false, ballPositionx: 10500, ballPositiony: -640, camPositionx: 10480, camPositiony: -40)
-    var level7 = Levels(level: 7, levelComplete: false, ballPositionx: <#T##Int#>, ballPositiony: <#T##Int#>, camPositionx: <#T##Int#>, camPositiony: <#T##Int#>)
+    var level7 = Levels(level: 7, levelComplete: false, ballPositionx: 12280, ballPositiony: -640, camPositionx: 12300, camPositiony: -40)
     var endless = Levels(level: 0, levelComplete: false, ballPositionx: -3840, ballPositiony: -1120, camPositionx: -3840, camPositiony: -640)
     
     
