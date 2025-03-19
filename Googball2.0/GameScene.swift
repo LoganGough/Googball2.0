@@ -78,12 +78,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         endlessWall12 = self.childNode(withName: "endlessWall12") as! SKSpriteNode
         endlessWall13 = self.childNode(withName: "endlessWall13") as! SKSpriteNode
         endlessWall14 = self.childNode(withName: "endlessWall14") as! SKSpriteNode
-        endlessWall15 = self.childNode(withName: "endlessWall15") as! SKSpriteNode
-        endlessWall16 = self.childNode(withName: "endlessWall16") as! SKSpriteNode
-        endlessWall17 = self.childNode(withName: "endlessWall17") as! SKSpriteNode
-        endlessWall18 = self.childNode(withName: "endlessWall18") as! SKSpriteNode
-        endlessWall19 = self.childNode(withName: "endlessWall19") as! SKSpriteNode
-        endlessWall20 = self.childNode(withName: "endlessWall20") as! SKSpriteNode
+//        endlessWall15 = self.childNode(withName: "endlessWall15") as! SKSpriteNode
+//        endlessWall16 = self.childNode(withName: "endlessWall16") as! SKSpriteNode
+//        endlessWall17 = self.childNode(withName: "endlessWall17") as! SKSpriteNode
+//        endlessWall18 = self.childNode(withName: "endlessWall18") as! SKSpriteNode
+//        endlessWall19 = self.childNode(withName: "endlessWall19") as! SKSpriteNode
+//        endlessWall20 = self.childNode(withName: "endlessWall20") as! SKSpriteNode
 
         physicsWorld.contactDelegate = self
     
@@ -114,6 +114,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
                 level4.levelComplete = true
             }
+           else if(level5.levelComplete == false && level == 5){
+               ball.position = CGPoint(x: level5.ballPositionx, y: level5.ballPositiony)
+               cam.position = CGPoint(x: level5.camPositionx, y: level5.camPositiony)
+               level5.levelComplete = true
+           }
+           else if(level6.levelComplete == false && level == 6){
+               ball.position = CGPoint(x: level6.ballPositionx, y: level6.ballPositiony)
+               cam.position = CGPoint(x: level6.camPositionx, y: level6.camPositiony)
+               level6.levelComplete = true
+           }
+           else if(level7.levelComplete == false && level == 7){
+               ball.position = CGPoint(x: level7.ballPositionx, y: level7.ballPositiony)
+               cam.position = CGPoint(x: level7.camPositionx, y: level7.camPositiony)
+               level7.levelComplete = true
+           }
         }
         
         
@@ -209,6 +224,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         level2.levelComplete = false
         level3.levelComplete = false
         level4.levelComplete = false
+        level5.levelComplete = false
+        level6.levelComplete = false
+        level7.levelComplete = false
     }
     func homeFunc(){
         cam.position = CGPoint(x: 0, y: 0)
@@ -265,6 +283,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.position = CGPoint(x: level4.ballPositionx, y: level4.ballPositiony)
         cam.position = CGPoint(x: level4.camPositionx, y: level4.camPositiony)
     }
+    func level5Func(){
+        ball.position = CGPoint(x: level5.ballPositionx, y: level5.ballPositiony)
+        cam.position = CGPoint(x: level5.camPositionx, y: level5.camPositiony)
+    }
+    func level6Func(){
+        ball.position = CGPoint(x: level6.ballPositionx, y: level6.ballPositiony)
+        cam.position = CGPoint(x: level6.camPositionx, y: level6.camPositiony)
+    }
+    func level7Func(){
+        ball.position = CGPoint(x: level7.ballPositionx, y: level7.ballPositiony)
+        cam.position = CGPoint(x: level7.camPositionx, y: level7.camPositiony)
+    }
+    
     func endlessUpdate(){
         // Reset each wall individually while preserving order
         // Reset each wall individually while preserving order
@@ -346,8 +377,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(level == 1){
             let reset = SKAction.move(to: CGPoint(x: level1.ballPositionx, y: level1.ballPositiony), duration: 0)
             ball.run(reset)
-            
-            
         }
         else if(level == 2){
             let reset = SKAction.move(to: CGPoint(x: level2.ballPositionx, y: level2.ballPositiony), duration: 0)
@@ -362,6 +391,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let reset = SKAction.move(to: CGPoint(x: level4.ballPositionx, y: level4.ballPositiony), duration: 0)
             ball.run(reset)
         }
+        else if(level == 5){
+            let reset = SKAction.move(to: CGPoint(x: level5.ballPositionx, y: level5.ballPositiony), duration: 0)
+            ball.run(reset)
+        }
+        else if(level == 6){
+            let reset = SKAction.move(to: CGPoint(x: level6.ballPositionx, y: level6.ballPositiony), duration: 0)
+            ball.run(reset)
+        }
+        else if(level == 7){
+            let reset = SKAction.move(to: CGPoint(x: level7.ballPositionx, y: level7.ballPositiony), duration: 0)
+            ball.run(reset)
+        }
 
+    }
+    func levelSet1(){
+        level = 1
+    }
+    func levelSet2(){
+        level = 2
+    }
+    func levelSet3(){
+        level = 3
+    }
+    func levelSet4(){
+        level = 4
+    }
+    func levelSet5(){
+        level = 5
+    }
+    func levelSet6(){
+        level = 6
+    }
+    func levelSet7(){
+        level = 7
     }
 }

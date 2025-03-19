@@ -125,7 +125,7 @@ class GameViewController: UIViewController {
         play.endlessFunc()
         googLabel.textColor = UIColor.lightGray
     }
-        
+    
     @IBAction func homeTap(_ sender: UITapGestureRecognizer) {
         playButton.isHidden = false
         settingsButton.isHidden = false
@@ -139,12 +139,12 @@ class GameViewController: UIViewController {
         
         play.homeFunc()
     }
+    
+    
+    
 
     
     
-    @IBAction func resetTap(_ sender: UITapGestureRecognizer) {
-        play.resetfunc()
-    }
     func startPlay(){
         playButton.isHidden = true
         settingsButton.isHidden = true
@@ -160,21 +160,43 @@ class GameViewController: UIViewController {
         if(AppData.boolView){
             if(blah == 1){
                 play.level1Func()
+                play.levelSet1()
                 googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
             else if(blah == 2){
                 play.level2Func()
+                play.levelSet2()
                 googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
             else if(blah == 3){
                 play.level3Func()
+                play.levelSet3()
                 googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
             else if(blah == 4){
                 play.level4Func()
+                play.levelSet4()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 5){
+                play.level5Func()
+                play.levelSet5()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 6){
+                play.level6Func()
+                play.levelSet6()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 7){
+                play.level7Func()
+                play.levelSet7()
                 googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
