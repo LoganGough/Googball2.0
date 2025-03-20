@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var settingsButton: UIButton!
     
-    @IBOutlet weak var homeOut: UIImageView!
+    @IBOutlet weak var homeOut: UIButton!
     
     @IBOutlet weak var resetOut: UIImageView!
     
@@ -126,7 +126,9 @@ class GameViewController: UIViewController {
         googLabel.textColor = UIColor.lightGray
     }
     
-    @IBAction func homeTap(_ sender: UITapGestureRecognizer) {
+    @IBAction func homeButton(_ sender: UIButton) {
+        
+        
         playButton.isHidden = false
         settingsButton.isHidden = false
         endless.isHidden = false
@@ -197,6 +199,24 @@ class GameViewController: UIViewController {
             else if(blah == 7){
                 play.level7Func()
                 play.levelSet7()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 8){
+                play.level8Func()
+                play.levelSet8()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 9){
+                play.level9Func()
+                play.levelSet9()
+                googLabel.textColor = UIColor.lightGray
+                startPlay()
+            }
+            else if(blah == 10){
+                play.level10Func()
+                play.levelSet10()
                 googLabel.textColor = UIColor.lightGray
                 startPlay()
             }
