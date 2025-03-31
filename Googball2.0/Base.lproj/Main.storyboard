@@ -90,13 +90,13 @@
                                     <constraint firstAttribute="height" constant="150" id="RZq-7k-py5"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIG-Rz-jdM">
-                                <rect key="frame" x="277" y="45" width="67" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5A-7i-8hV">
+                                <rect key="frame" x="294" y="38" width="67" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="home"/>
                                 <connections>
-                                    <action selector="homeButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="3cL-Cu-Zg0"/>
+                                    <action selector="homeButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="yhe-Ej-saA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,7 +122,7 @@
                     <connections>
                         <outlet property="endless" destination="vwn-da-YN2" id="n02-FN-C3a"/>
                         <outlet property="googLabel" destination="00h-pi-CMR" id="HRf-Es-47C"/>
-                        <outlet property="homeOut" destination="VIG-Rz-jdM" id="aYl-TE-PqM"/>
+                        <outlet property="homeOut" destination="X5A-7i-8hV" id="o6Z-oC-qa4"/>
                         <outlet property="leftButton" destination="o06-bc-Jbf" id="uLF-Ns-HDs"/>
                         <outlet property="levelsButton" destination="bsc-Ia-vQp" id="8kL-uq-XO2"/>
                         <outlet property="playButton" destination="EE6-7S-uIh" id="Nna-9L-jNo"/>

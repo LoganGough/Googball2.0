@@ -128,7 +128,7 @@ class GameViewController: UIViewController {
     
     @IBAction func homeButton(_ sender: UIButton) {
         
-        
+        print("home")
         playButton.isHidden = false
         settingsButton.isHidden = false
         endless.isHidden = false
